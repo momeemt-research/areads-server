@@ -38,4 +38,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: cachix/install-nix-action@v22
-      - run: nix-shell -f ./shell.nix --run "pytest"
+      - run: nix-shell --run "pytest"
