@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@22
+      - uses: cachix/install-nix-action@v22
       - run: nix-env -f ./nix/pkgs.nix -iA nixpkgs-fmt
       - run: |
           find . -name '*.nix' -print0 | while IFS= read -r -d '' file; do
@@ -23,19 +23,19 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@22
+      - uses: cachix/install-nix-action@v22
       - run: nix-env -f ./nix/pkgs.nix -iA black
       - run: black --check .
   mypy:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@22
+      - uses: cachix/install-nix-action@v22
       - run: nix-env -f ./nix/pkgs.nix -iA mypy
       - run: mypy .
   test:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@22
+      - uses: cachix/install-nix-action@v22
       - run: nix-shell -f ./shell.nix --run "pytest"
