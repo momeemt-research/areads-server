@@ -31,8 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: cachix/install-nix-action@v22
-      - run: nix-env -f ./nix/pkgs.nix -iA mypy
-      - run: mypy .
+      - run: nix-shell --run "mypy ."
   test:
     runs-on: ubuntu-22.04
     steps:
