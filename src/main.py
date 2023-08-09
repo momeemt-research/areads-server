@@ -1,5 +1,6 @@
 import cv2
 
+
 def main():
     capture = cv2.VideoCapture(0)
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
@@ -15,5 +16,6 @@ def main():
         if cv2.waitKey(1) == ord("q"):
             break
         cv2.imshow("Video", frame)
+
 
 main()
