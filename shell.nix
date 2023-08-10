@@ -5,7 +5,7 @@ let
     url = "https://raw.githubusercontent.com/bschnurr/python-type-stubs/add-opencv/cv2/__init__.pyi";
     sha256 = "sha256-IkE/b5/bZe7oC95xTwxrlH3iZYnK3pNCarz8QYxVecY=";
   };
-  mypy-stubs = pkgs.runCommand "mypy-stubs" {} ''
+  mypy-stubs = pkgs.runCommand "mypy-stubs" { } ''
     mkdir -p $out/stubs
     cp ${opencv-type-stub} $out/stubs/cv2.pyi
   '';
